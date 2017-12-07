@@ -1,5 +1,3 @@
-
-
 using System.Collections.Generic;
 using financa_domain;
 using financa_repository;
@@ -19,10 +17,9 @@ namespace financa_api.Controllers
 
         // GET api/values
         [HttpGet]
-        public IActionResult Get()
+        public IEnumerable<Despesa> Get()
         {
-            var lista = repository.GetAll();
-            return Ok(lista);
+            return repository.GetAll();
         }
 
         // GET api/todo/5
